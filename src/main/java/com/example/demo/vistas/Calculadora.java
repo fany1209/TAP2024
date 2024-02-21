@@ -48,7 +48,7 @@ public class Calculadora extends Stage {
                gdpTeclado.add(arBotones[i][j],j,i);
 
                if(arEtiquetas[pos] == '+' || arEtiquetas[pos] == '-' || arEtiquetas[pos] == '*' || arEtiquetas[pos] == '/'  )
-                   arBotones[i][j].setId("color.operador");
+                   arBotones[i][j].setId("color-operador");
                pos++;
            }
        }

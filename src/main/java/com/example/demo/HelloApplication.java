@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import com.example.demo.vistas.Calculadora;
+//import com.example.demo.vistas.Memorama;
+import com.example.demo.vistas.Memorama;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -16,7 +18,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora, mitSalir;
+    private MenuItem mitCalculadora,mitMemorama, mitSalir;
     private BorderPane bdpPanel;
 
 
@@ -34,15 +36,20 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setMaximized(true);
-        new Calculadora();
+        //new Calculadora();
     }
 
     private void Crearmenu() {
 
         mitCalculadora = new MenuItem("calculadora");
         mitCalculadora.setOnAction(actionEvent -> new Calculadora());
+
+        mitMemorama = new MenuItem("memorama");
+        mitMemorama.setOnAction(actionEvent -> new Memorama());
+
         menParcial1 = new Menu("primer parcial") ;
         menParcial1.getItems().addAll(mitCalculadora);
+        menParcial1.getItems().addAll(mitMemorama);
 
         menuParcial2= new Menu("segundo parcial");
 
