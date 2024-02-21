@@ -30,7 +30,7 @@ public class Calculadora extends Stage {
        CrearTeclado();
         vContenedor = new VBox(txtPantalla,gdpTeclado);
         vContenedor.setSpacing(5);
-        escena = new Scene(vContenedor,200,200);
+        escena = new Scene(vContenedor,200,300);
         escena.getStylesheets()
                 .add(getClass().getResource("/estilos/calculadora.css").toString());
     }
@@ -47,15 +47,27 @@ public class Calculadora extends Stage {
                arBotones[i][j].setOnAction(event -> setValue(arEtiquetas[finalPos]));
                gdpTeclado.add(arBotones[i][j],j,i);
 
-               if(arEtiquetas[pos] == '+' || arEtiquetas[pos] == '-' || arEtiquetas[pos] == '*' || arEtiquetas[pos] == '/'  )
+               if(arEtiquetas[pos] == '+' || arEtiquetas[pos] == '-' || arEtiquetas[pos] == '*' || arEtiquetas[pos] == '/'  || arEtiquetas[pos] == '.'  )
                    arBotones[i][j].setId("color-operador");
                pos++;
            }
        }
+        Button btnLimpiar = new Button("C");
+        btnLimpiar.setPrefSize(50, 50);
+        btnLimpiar.setOnAction(event -> clearDisplay());
+        gdpTeclado.add(btnLimpiar, 3, 4); // Agrega el botón en la posición deseada
+
+
+    }
+    private void setValue(char simbolo) {
+        if(txtPantalla.getText().equals("0")) {
+            txtPantalla.setText("");
+        }
+        txtPantalla.appendText(simbolo + "");
     }
 
-    private void setValue(char simbolo) {
-       txtPantalla.appendText(simbolo+"");
+    private void clearDisplay() {
+        txtPantalla.setText("0");
     }
 
 }

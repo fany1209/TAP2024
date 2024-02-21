@@ -1,6 +1,40 @@
-#color-operador {
+/*#color-operador {
     -fx-background-color: linear-gradient(
             rgb(255, 255, 255),
             rgb(255, 0, 0)
     );
+}*/
+.root {
+    -fx-background-color: #0c0c0c;
+}
+
+.textField {
+    -fx-font-size: 24px;
+    -fx-text-alignment: right;
+}
+
+.button {
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+    -fx-background-radius: 25px;
+}
+
+#color-operador {
+    -fx-background-color: #FF9500;
+    -fx-text-fill: white;
+}
+
+#color-igual {
+    -fx-background-color: #FF2D55;
+    -fx-text-fill: white;
+}
+
+#color-numero {
+    -fx-background-color: #E5E5EA;
+}
+
+#color-borrar {
+    -fx-background-color: #FF3B30;
+    -fx-text-fill: white;
 }

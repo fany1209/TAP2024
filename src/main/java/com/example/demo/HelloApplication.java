@@ -45,7 +45,7 @@ public class HelloApplication extends Application {
         mitCalculadora.setOnAction(actionEvent -> new Calculadora());
 
         mitMemorama = new MenuItem("memorama");
-        mitMemorama.setOnAction(actionEvent -> new Memorama());
+       mitMemorama.setOnAction(actionEvent -> new Memorama());
 
         menParcial1 = new Menu("primer parcial") ;
         menParcial1.getItems().addAll(mitCalculadora);
