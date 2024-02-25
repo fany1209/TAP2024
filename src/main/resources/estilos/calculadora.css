@@ -1,40 +1,49 @@
-/*#color-operador {
-    -fx-background-color: linear-gradient(
-            rgb(255, 255, 255),
-            rgb(255, 0, 0)
-    );
-}*/
+
 .root {
-    -fx-background-color: #0c0c0c;
+    -fx-background-image: url('https://i.pinimg.com/originals/8a/be/8c/8abe8c811cd493646811407b3ce87244.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
 }
 
-.textField {
-    -fx-font-size: 24px;
-    -fx-text-alignment: right;
+.text-field {
+    -fx-font-size: 15px;
+    -fx-pref-height: 50px;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #151414;
+    -fx-border-width: 1px;
+
 }
+
 
 .button {
+    -fx-font-size: 18px;
     -fx-pref-width: 50px;
     -fx-pref-height: 50px;
-    -fx-font-size: 18px;
+    -fx-border-width: 1px;
+    -fx-background-color: linear-gradient(to bottom, #e0a5d2, #ec67cc);
+    -fx-text-fill: white;
     -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
 }
 
-#color-operador {
-    -fx-background-color: #FF9500;
+
+#botonLimpiar {
+    -fx-background-color: #f3b600;
+}
+
+.button.operador {
+    -fx-font-size: 18px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #97b64b;
     -fx-text-fill: white;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
 }
 
-#color-igual {
-    -fx-background-color: #FF2D55;
-    -fx-text-fill: white;
-}
 
-#color-numero {
-    -fx-background-color: #E5E5EA;
-}
-
-#color-borrar {
-    -fx-background-color: #FF3B30;
-    -fx-text-fill: white;
-}
