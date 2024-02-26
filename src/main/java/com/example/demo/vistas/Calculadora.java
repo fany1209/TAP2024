@@ -44,7 +44,6 @@ public class Calculadora extends Stage {
                 botones[i - 1][j] = new Button(String.valueOf(simbolo));
                 botones[i - 1][j].setPrefSize(50, 50);
                 botones[i - 1][j].setOnAction((event) -> handleButtonClick(String.valueOf(simbolo)));
-                // Asignar clase CSS "operador" a los botones que representan operadores matemáticos
                 if (esOperador(simbolo)) {
                     botones[i - 1][j].getStyleClass().add("operador");
                 }
@@ -70,13 +69,35 @@ public class Calculadora extends Stage {
     }
 
     private void evaluateExpression() {
-        try {
-            String result = String.valueOf(eval(displayField.getText()));
-            displayField.setText(result);
-        } catch (Exception e) {
-            displayField.setText("Error");
+        String expression = displayField.getText();
+        if (isValidExpression(expression)) {
+            double result = eval(expression);
+            displayField.setText(String.valueOf(result));
+        } else {
+            displayField.setText("Error: Expresión no válida");
         }
     }
+    private boolean isValidExpression(String expression) {
+        if (expression.isEmpty()) {
+            return false;
+        }
+
+        String[] partes = expression.split("[+\\-*/]");
+
+        if (partes.length != 2) {
+            return false;
+        }
+
+        try {
+            Double.parseDouble(partes[0]);
+            Double.parseDouble(partes[1]);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+        return true;
+    }
+
 
     private void clearDisplay() {
         displayField.clear();
