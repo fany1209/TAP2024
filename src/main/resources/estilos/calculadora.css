@@ -27,11 +27,18 @@
     -fx-border-radius: 25px;
     -fx-padding: 0;
     -fx-border-color: transparent;
-}
 
+}
+.button:pressed {
+    -fx-background-color: #b622a1;
+}
 
 #botonLimpiar {
     -fx-background-color: #f3b600;
+}
+.botonLimpiar:pressed{
+    fx-background-color: #FF0000;
+
 }
 
 .button.operador {
@@ -45,5 +52,12 @@
     -fx-padding: 0;
     -fx-border-color: transparent;
 }
+
+
+.button.operador:pressed {
+    -fx-background-color: #70e7e7;
+}
+
+
 
 
