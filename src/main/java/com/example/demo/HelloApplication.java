@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.modelos.Conexion;
 import com.example.demo.vistas.Calculadora;
 //import com.example.demo.vistas.Memorama;
 import com.example.demo.vistas.Memorama;
@@ -37,6 +38,8 @@ public class HelloApplication extends Application {
         stage.show();
         stage.setMaximized(true);
         //new Calculadora();
+        Conexion.crearConexion();
+
     }
 
     private void Crearmenu() {
