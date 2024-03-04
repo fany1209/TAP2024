@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.modelos.Conexion;
 import com.example.demo.vistas.Calculadora;
 //import com.example.demo.vistas.Memorama;
+import com.example.demo.vistas.CuadroMagico;
 import com.example.demo.vistas.Memorama;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -19,7 +20,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora,mitMemorama, mitSalir;
+    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico, mitSalir;
     private BorderPane bdpPanel;
 
 
@@ -50,9 +51,14 @@ public class HelloApplication extends Application {
         mitMemorama = new MenuItem("memorama");
        mitMemorama.setOnAction(actionEvent -> new Memorama());
 
+        mitCuadroMagico = new MenuItem("Cuadro Magico");
+        mitCuadroMagico.setOnAction(actionEvent -> new CuadroMagico());
+
+
         menParcial1 = new Menu("primer parcial") ;
         menParcial1.getItems().addAll(mitCalculadora);
         menParcial1.getItems().addAll(mitMemorama);
+        menParcial1.getItems().addAll(mitCuadroMagico);
 
         menuParcial2= new Menu("segundo parcial");
 
