@@ -8,4 +8,5 @@ module com.example.demo {
 
     requires java.sql;
     requires mysql.connector.j;
+    opens com.example.demo.modelos;
 }

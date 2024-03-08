@@ -4,6 +4,7 @@ import com.example.demo.modelos.Conexion;
 import com.example.demo.vistas.Calculadora;
 //import com.example.demo.vistas.Memorama;
 import com.example.demo.vistas.CuadroMagico;
+import com.example.demo.vistas.EmpleadoTaqueria;
 import com.example.demo.vistas.Memorama;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -20,7 +21,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico, mitSalir;
+    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico,mitEmpleadoTaqueria, mitSalir;
     private BorderPane bdpPanel;
 
 
@@ -54,11 +55,15 @@ public class HelloApplication extends Application {
         mitCuadroMagico = new MenuItem("Cuadro Magico");
         mitCuadroMagico.setOnAction(actionEvent -> new CuadroMagico());
 
+        mitEmpleadoTaqueria = new MenuItem("Empleado taqueria");
+        mitEmpleadoTaqueria.setOnAction(actionEvent -> new EmpleadoTaqueria());
+
 
         menParcial1 = new Menu("primer parcial") ;
         menParcial1.getItems().addAll(mitCalculadora);
         menParcial1.getItems().addAll(mitMemorama);
         menParcial1.getItems().addAll(mitCuadroMagico);
+        menParcial1.getItems().addAll(mitEmpleadoTaqueria);
 
         menuParcial2= new Menu("segundo parcial");
 
