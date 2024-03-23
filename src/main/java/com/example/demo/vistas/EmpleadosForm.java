@@ -18,9 +18,10 @@ public class EmpleadosForm extends Stage {
     private TextField[] arTxtCampos = new TextField[5];
     private Button btnGuardar;
     private VBox vbxPrincipal;
-    public EmpleadosForm(TableView<EmpleadosDAO> tbvEmp){
+
+    public EmpleadosForm(TableView<EmpleadosDAO> tbvEmp,EmpleadosDAO objEmp){
         tbvEmpleados = tbvEmp;
-        objEmp = new EmpleadosDAO();
+        this.objEmp = (objEmp == null) ? new EmpleadosDAO() : objEmp;
         CrearUI();
         this.setTitle("INSERTAR USUARIO");
         this.setScene(escena);
@@ -37,10 +38,19 @@ public class EmpleadosForm extends Stage {
             arTxtCampos[i].setPromptText(arPromts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
+        LlenarForm();
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarEmpleado());
         vbxPrincipal.getChildren().add(btnGuardar);
         escena = new Scene(vbxPrincipal,350,250);
+    }
+
+    private void LlenarForm() {
+        arTxtCampos[0].setText(objEmp.getNomEmpleado());
+        arTxtCampos[1].setText(objEmp.getRFCEmpleado());
+        arTxtCampos[2].setText(objEmp.getSalario()+"");
+        arTxtCampos[3].setText(objEmp.getTelefono());
+        arTxtCampos[4].setText(objEmp.getDireccion());
     }
 
     private void GuardarEmpleado() {
@@ -50,9 +60,12 @@ public class EmpleadosForm extends Stage {
         objEmp.setSalario(Float.parseFloat(arTxtCampos[2].getText()));
         objEmp.setTelefono(arTxtCampos[3].getText());
         objEmp.setDireccion(arTxtCampos[4].getText());
-        objEmp.INSERTAR();
-        tbvEmpleados.setItems(objEmp.CONSULTAR());
-        tbvEmpleados.refresh();
+        if (objEmp.getIdEmpleado() > 0)
+            objEmp.ACTUALIZAR();
+        else
+                objEmp.INSERTAR();
+            tbvEmpleados.setItems(objEmp.CONSULTAR());
+            tbvEmpleados.refresh();
 
         arTxtCampos[0].clear();
         arTxtCampos[1].clear();

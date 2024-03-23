@@ -1,17 +1,13 @@
 package com.example.demo;
 
 import com.example.demo.modelos.Conexion;
-import com.example.demo.vistas.Calculadora;
+import com.example.demo.vistas.*;
 //import com.example.demo.vistas.Memorama;
-import com.example.demo.vistas.CuadroMagico;
-import com.example.demo.vistas.EmpleadoTaqueria;
-import com.example.demo.vistas.Memorama;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -21,7 +17,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico,mitEmpleadoTaqueria, mitSalir;
+    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico,mitEmpleadoTaqueria,mitPista, mitSalir;
     private BorderPane bdpPanel;
 
 
@@ -40,6 +36,7 @@ public class HelloApplication extends Application {
         stage.show();
         stage.setMaximized(true);
         //new Calculadora();
+
         Conexion.crearConexion();
 
     }
@@ -66,6 +63,9 @@ public class HelloApplication extends Application {
         menParcial1.getItems().addAll(mitEmpleadoTaqueria);
 
         menuParcial2= new Menu("segundo parcial");
+        mitPista = new MenuItem("hilos");
+        mitPista.setOnAction(event -> new Pista());
+        menuParcial2.getItems().addAll(mitPista);
 
         mitSalir= new MenuItem("salir");
         menuSalir = new Menu("salir");
