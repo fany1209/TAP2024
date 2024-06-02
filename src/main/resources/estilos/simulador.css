@@ -1,0 +1,32 @@
+/* styles.css */
+.button {
+    -fx-background-color: #f15bce;
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #6d31c2;
+}
+
+/* styles.css */
+.progress-bar {
+    -fx-pref-width: 400px;
+    -fx-pref-height: 30px;
+    -fx-accent: #c21628;}
+
+#table-viewtable-view {
+    -fx-border-color: #97b64b;
+}
+
+.table-column-header {
+    -fx-background-color: #2a9d8f;
+    -fx-text-fill: white;
+}
+.root {
+    -fx-background-color: #84a1ee;
+}

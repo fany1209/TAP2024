@@ -17,7 +17,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     private MenuBar mnbPrincipal;
     private Menu menParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico,mitEmpleadoTaqueria,mitPista, mitSalir;
+    private MenuItem mitCalculadora,mitMemorama, mitCuadroMagico,mitEmpleadoTaqueria,mitPista,mitcat,mitpromo,
+            mitSD,mitEncuentraLaPareja,mitSimulador,mitMenutaq,mitSalir;
     private BorderPane bdpPanel;
 
 
@@ -55,17 +56,46 @@ public class HelloApplication extends Application {
         mitEmpleadoTaqueria = new MenuItem("Empleado taqueria");
         mitEmpleadoTaqueria.setOnAction(actionEvent -> new EmpleadoTaqueria());
 
+        mitEncuentraLaPareja = new MenuItem("Encuentra La Pareja");
+        mitEncuentraLaPareja.setOnAction(actionEvent -> new EncuentraLaPareja());
+
+
+
 
         menParcial1 = new Menu("primer parcial") ;
         menParcial1.getItems().addAll(mitCalculadora);
         menParcial1.getItems().addAll(mitMemorama);
         menParcial1.getItems().addAll(mitCuadroMagico);
         menParcial1.getItems().addAll(mitEmpleadoTaqueria);
+        menParcial1.getItems().addAll(mitEncuentraLaPareja);
 
         menuParcial2= new Menu("segundo parcial");
         mitPista = new MenuItem("hilos");
+        mitcat = new MenuItem("CategoriaEmpleado");
+        mitpromo = new MenuItem("PromocionesTaqueria");
+        mitSD = new MenuItem("Servicio a domomcilio");
+        mitMenutaq = new MenuItem("menu taqueria");
+        mitSimulador = new MenuItem("Simulador");
+
+
         mitPista.setOnAction(event -> new Pista());
         menuParcial2.getItems().addAll(mitPista);
+
+        mitcat.setOnAction(event -> new CategoriasTaqueria());
+        menuParcial2.getItems().addAll(mitcat);
+
+        mitpromo.setOnAction(event -> new PromocionesTaqueria());
+        menuParcial2.getItems().addAll(mitpromo);
+
+        mitSD.setOnAction(event -> new ServicioDomicilio());
+        menuParcial2.getItems().addAll(mitSD);
+
+        mitMenutaq.setOnAction(event -> new MenuTaqueria());
+        menuParcial2.getItems().addAll(mitMenutaq);
+
+        mitSimulador.setOnAction(event -> new Simulador());
+        menuParcial2.getItems().addAll(mitSimulador);
+
 
         mitSalir= new MenuItem("salir");
         menuSalir = new Menu("salir");

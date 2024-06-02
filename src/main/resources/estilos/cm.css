@@ -1,4 +1,4 @@
-#root {
+.root {
     -fx-background-color: #4d7af1;
 }
 
@@ -6,18 +6,52 @@
     -fx-spacing: 10px;
 }
 
-#gridPane {
+.gridPane {
     -fx-background-color: #9ce79c;
     -fx-padding: 10px;
     -fx-hgap: 10px;
     -fx-vgap: 10px;
 }
 
-#generarButton {
+.button {
     -fx-background-color: #70e7e7;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-padding: 10px 20px;
-    -fx-background-radius: 10px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 20px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+}
+
+.button:hover {
+    -fx-background-color: #6ad3d3;
+}
+
+.button:pressed {
+    -fx-background-color: #5fbaba;
+}
+
+.alert {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.alert .dialog-pane {
+    -fx-background-color: #f44336;
+}
+
+.alert .header-panel {
+    -fx-background-color: #d32f2f;
+}
+
+.alert .button-bar .button {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.alert .button-bar .button:hover {
+    -fx-background-color: #b71c1c;
 }
